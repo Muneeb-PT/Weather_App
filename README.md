@@ -1,367 +1,119 @@
-<div align="center">🌦️ Weather App
+# Weather App
 
-A modern, responsive weather application built with React + Vite
+A small weather application I built while learning React and working with APIs during my four-week frontend development internship.
 
-<p>
-  <b>Internship / Training Project</b><br/>
-  Developed as part of hands-on learning through technical training and coding-community activities.
-</p><p>
-  <a href="https://github.com/Muneeb-PT/Weather_App">
-    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository"/>
-  </a>
-  <img src="https://img.shields.io/badge/React-18%2B-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
-  <img src="https://img.shields.io/badge/Vite-Frontend-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
-  <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-</p></div>---
+The project lets a user search for a city and view its current temperature and wind speed. It uses the Open-Meteo geocoding and forecast APIs, so an API key is not required.
 
-📌 Overview
+## Why I built this
 
-Weather App is a responsive web application built with React and Vite to provide users with a simple and interactive way to explore weather information.
+I worked on this project as part of my frontend development learning during an internship with **Estelle Darcy AI and Automation Pvt. Ltd.** The internship ran from **11 May 2026 to 5 June 2026**.
 
-The project focuses on applying modern frontend development concepts including:
+The training included frontend topics such as HTML, CSS, JavaScript, React and Git. We had some trainer-led classes and guidance, and I continued practising by building this application. I used ChatGPT as a learning and debugging mentor while working through parts I could not solve on my own.
 
-- ⚛️ Component-based React development
-- ⚡ Vite-based development workflow
-- 🎨 Responsive user interface design
-- 🔄 API-driven data handling
-- 🧩 Reusable UI components
-- 📱 Mobile-friendly layouts
-- 🛠️ Modern JavaScript development practices
+This is a learning project, not a claim of professional-level React experience.
 
-This project was developed as a hands-on training/internship learning project, with an emphasis on understanding how a real frontend application is structured and developed.
+## What it does
 
----
+- Search for a city by name.
+- Find the location using the Open-Meteo geocoding API.
+- Request current temperature and wind speed for that location.
+- Show loading, empty-input, city-not-found and request-error messages.
+- Display the result in a layout that works on smaller screens.
 
-🎯 Project Objectives
+## Built with
 
-The main objectives of this project were to:
+- React
+- JavaScript
+- CSS
+- Vite
+- Open-Meteo Geocoding API
+- Open-Meteo Forecast API
 
-1. Understand the fundamentals of React application development
-2. Learn how frontend applications consume external APIs
-3. Practice component-based UI development
-4. Build a responsive interface for different screen sizes
-5. Understand the modern Vite + React development workflow
-6. Improve practical Git and GitHub usage
-7. Apply concepts learned through technical training and coding-club activities
+## How the API flow works
 
----
+1. The user enters a city name.
+2. The app sends that name to the Open-Meteo geocoding endpoint.
+3. The API returns the matching location's latitude and longitude.
+4. The app uses those coordinates to request current weather data.
+5. React state is updated and the result is displayed.
 
-✨ Features
+## Run it locally
 
-- 🌤️ Weather information interface
-- 🔍 Location-based weather search
-- 🌡️ Weather condition display
-- 📱 Responsive design
-- ⚡ Fast development and build process using Vite
-- 🧩 Component-based architecture
-- 🔄 Dynamic API data handling
-- 🎨 Clean and user-friendly interface
+You need Node.js and npm installed.
 
-«Note: Feature availability depends on the current implementation in the repository.»
+```bash
+git clone https://github.com/Muneeb-PT/Weather_App.git
+cd Weather_App
+npm install
+npm run dev
+```
 
----
+Open the local address printed by Vite in your terminal.
 
-🧱 Tech Stack
+## Useful commands
 
-Technology| Purpose
-⚛️ React| User interface and component architecture
-⚡ Vite| Development server and build tooling
-🟨 JavaScript| Application logic
-🌐 HTML| Application structure
-🎨 CSS| Styling and responsive design
-🔌 Weather API| Weather data source
-🧹 ESLint| Code quality and linting
-🔧 Git| Version control
-🐙 GitHub| Source-code management
+```bash
+npm run dev      # Start the development server
+npm run lint     # Run ESLint
+npm run build    # Create a production build
+npm run preview  # Preview the production build
+```
 
----
+## Project structure
 
-🏗️ Application Architecture
-
-                    ┌──────────────────┐
-                    │      User        │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │   React UI       │
-                    │   Components     │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │  Search / Input  │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │  Weather API     │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │ Process Response │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │ Weather Display  │
-                    └──────────────────┘
-
----
-
-📂 Project Structure
-
+```text
 Weather_App/
-│
 ├── public/
-│   └── static assets
-│
 ├── src/
-│   ├── components/
 │   ├── assets/
 │   ├── App.jsx
-│   ├── main.jsx
-│   └── styles
-│
-├── .github/
-│   └── workflows/
-│
-├── .gitignore
-├── eslint.config.js
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
 ├── index.html
 ├── package.json
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
+```
 
-«Adjust the structure above if your actual "src" folders differ.»
+## What I practised
 
----
+- React components and state with `useState`
+- Handling form submissions and user input
+- Calling external APIs with `fetch`
+- Working with asynchronous functions and `async/await`
+- Reading JSON responses
+- Handling loading and error states
+- Basic responsive CSS
+- Running a React project with Vite
+- Using Git and GitHub during development
 
-🚀 Getting Started
+## Things I would like to improve
 
-Prerequisites
+- Show weather conditions and suitable icons.
+- Add a multi-day forecast.
+- Add a current-location option.
+- Let users switch between Celsius and Fahrenheit.
+- Add tests for the search and API states.
 
-Make sure you have installed:
+## About the internship
 
-- "Node.js" (https://nodejs.org/)
-- npm
-- Git
+**Organisation:** Estelle Darcy AI and Automation Pvt. Ltd.  
+**Duration:** 4 weeks  
+**Dates:** 11 May 2026 – 5 June 2026  
+**Topic:** Frontend Development using HTML, CSS, JavaScript, React and Git
 
-1. Clone the repository
+The internship certificate was issued on 16 June 2026.
 
-git clone https://github.com/Muneeb-PT/Weather_App.git
+## Author
 
-2. Enter the project
+**Mohammed Muneeb PT**  
+B.Tech Computer Science and Engineering student, KMEA Engineering College
 
-cd Weather_App
+- GitHub: [Muneeb-PT](https://github.com/Muneeb-PT)
+- LinkedIn: [Mohammed Muneeb PT](https://linkedin.com/in/mohammed-muneeb-pt)
 
-3. Install dependencies
+## Weather data
 
-npm install
-
-4. Start the development server
-
-npm run dev
-
-The application will then be available through the local development URL displayed by Vite.
-
----
-
-🔐 Environment Variables
-
-If the application uses an API key, create a ".env" file in the project root:
-
-VITE_WEATHER_API_KEY=your_api_key_here
-
-Never commit real API keys or credentials to GitHub.
-
-Add the environment file to ".gitignore":
-
-.env
-.env.local
-.env.*.local
-
----
-
-🧪 Development
-
-Run the linter with:
-
-npm run lint
-
-Build the production version with:
-
-npm run build
-
-Preview the production build with:
-
-npm run preview
-
----
-
-📸 Screenshots
-
-Add screenshots here once you have polished UI captures.
-
-screenshots/
-├── desktop.png
-├── mobile.png
-└── weather-search.png
-
-Example:
-
-![Weather App Desktop](screenshots/desktop.png)
-
-A few high-quality screenshots make the repository much easier for recruiters and other developers to understand.
-
----
-
-🎓 Learning Context
-
-This project was developed as part of my practical learning journey through internship/training activities involving Estelle Darcy AI & Automations Pvt Ltd and the Coding Club at KMEA Engineering College.
-
-The project helped me practice:
-
-- React fundamentals
-- Frontend project structure
-- API integration
-- Responsive UI development
-- Git/GitHub workflows
-- Debugging
-- Iterative development
-
-The KMEA Coding Club provides students with workshops, coding challenges, tutorials and collaborative project opportunities, making project-based learning an important part of the development experience.
-
----
-
-📚 Key Learning Outcomes
-
-Through this project, I gained practical experience with:
-
-Frontend Development
-
-- Building interfaces with React
-- Creating reusable components
-- Managing UI state
-- Handling user input
-- Working with asynchronous data
-
-API Integration
-
-User Input
-    ↓
-API Request
-    ↓
-Response
-    ↓
-Data Processing
-    ↓
-React State
-    ↓
-UI Update
-
-Development Workflow
-
-Plan
- ↓
-Develop
- ↓
-Test
- ↓
-Debug
- ↓
-Commit
- ↓
-Push
- ↓
-Improve
-
----
-
-🔮 Future Improvements
-
-Potential improvements for future versions:
-
-- [ ] 🌍 Automatic current-location weather
-- [ ] 📅 Multi-day forecast
-- [ ] 🌡️ Temperature unit switching
-- [ ] 🌙 Dark / light theme
-- [ ] 📍 Recent searches
-- [ ] ⭐ Favorite locations
-- [ ] 🌧️ Weather-specific visual effects
-- [ ] 📊 Weather statistics
-- [ ] 📱 Progressive Web App support
-- [ ] 🧪 Automated testing
-- [ ] 🚀 Continuous deployment
-- [ ] ♿ Accessibility improvements
-- [ ] ⚡ Performance optimization
-
----
-
-🛡️ Code Quality
-
-The project uses ESLint to encourage consistent JavaScript and React development practices.
-
-Recommended future additions:
-
-- Automated tests
-- GitHub Actions CI
-- Dependency auditing
-- Production environment configuration
-- Error and loading states
-- API failure handling
-
----
-
-🤝 Contributing
-
-This repository is primarily a personal learning project, but suggestions and constructive feedback are welcome.
-
-If you would like to contribute:
-
-git fork
-git clone
-git checkout -b feature/your-feature
-git commit -m "feat: add your feature"
-git push
-
-Then open a Pull Request.
-
----
-
-👨‍💻 Author
-
-Mohammed Muneeb PT
-
-B.Tech Computer Science & Engineering Undergraduate
-
-Interested in:
-
-"Backend Engineering" · "Java" · "Python" · "AI/ML" · "Web Development" · "DSA"
-
-<p>
-<a href="https://github.com/Muneeb-PT">
-<img src="https://img.shields.io/badge/GitHub-Muneeb--PT-181717?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
-<a href="https://linkedin.com/in/mohammed-muneeb-pt">
-<img src="https://img.shields.io/badge/LinkedIn-Mohammed%20Muneeb%20PT-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-</p>---
-
-📄 License
-
-This project is available under the MIT License.
-
-See ""LICENSE"" (LICENSE) for details.
-
----
-
-<div align="center">🌦️ Built to learn. Built to experiment. Built to improve.
-
-⭐ If you find this project useful, consider giving the repository a star.
-
-<br/>Mohammed Muneeb PT · 2026
-
-</div>
+Weather information is provided by [Open-Meteo](https://open-meteo.com/).
